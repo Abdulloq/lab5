@@ -1,0 +1,162 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My first example',
+      theme: ThemeData(
+        primarySwatch: Skyblue.blue,
+      ),
+      home: const MyHomePage(), 
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3, 
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Welcome to our mobile programming'),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'List View'),
+              Tab(text: 'Grid View'),
+              Tab(text: 'Card'),
+
+              
+
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            _buildListView(),                                                                        
+            _buildGridView(),
+            buildCard(),
+
+          ],
+        ),
+      ),
+    );
+  }
+
+
+
+  Widget _buildListView() {
+    return ListView(
+      children: [
+        ListTile(
+          leading: const Icon(Icons.list),
+          title: const Text('Hello World 1'),
+        ),
+        ListTile(
+          leading: const Icon(Icons.list),
+          title: const Text('Hello World 2'),
+        ),
+        ListTile(
+          leading: const Icon(Icons.list),
+          title: const Text('Hello World 3'),
+        ),
+        ListTile(
+          leading: const Icon(Icons.list),
+          title: const Text('Hello World 4'),
+        ),
+        ListTile(
+          leading: const Icon(Icons.list),
+          title: const Text('Hello World 5'),
+        ),
+      ],
+    );
+  }
+
+
+
+  body: Center(
+    child: GridView.extends(
+      primary: false,
+      padding:const Edgelnsets.all(16),
+      crossAxisSpacing: 10,
+      mainAxisSpacing: 10,
+      maxCrossAxisEvent: 200.0,
+      children: <Widget>[
+        Container(
+          
+        )
+      ]
+
+      
+    )
+  )  
+
+  Widget _buildGridView() {
+    return GridView.count(
+      crossAxisCount: 2, 
+      children: [
+        Image.network(
+          'https://via.placeholder.com/150', 
+          fit: BoxFit.cover,
+        ),
+        Image.network(
+          'https://via.placeholder.com/150', 
+          fit: BoxFit.cover,
+        ),
+        Image.network(
+          'https://via.placeholder.com/150', 
+          fit: BoxFit.cover,
+        ),
+        Image.network(
+          'https://via.placeholder.com/150', 
+          fit: BoxFit.cover,
+        ),
+      ],
+    );
+  }
+
+
+
+
+Widget             buildCard() {
+return Center(
+  child: Container(
+
+    weight : 300,
+    height : 300,
+    padding: new Edgelnsets.all(10.0),
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: borderRadius.circular(15.0),
+      ),
+      color: Colors.red,
+      elevation: 10,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children : <Widget>[
+          const ListTile(
+            leading: Icon(cons.album,size:60),
+            title: Text(
+              'Wlcome to our mobile programming,'
+              style: TextStyle(frontSize: 30.0)
+            ),
+            subtitle: Text(
+              'Hello World',
+              style: TextStyle(frontSize: 18:0)
+            ),
+          ),
+        ]
+      )
+    )))
+    
+  }
+}
